@@ -1,0 +1,59 @@
+NiziPOS™ B20 Simulator - Android App
+
+This Android application is a mobile implementation of the NiziPOS™ B20 Simulator, originally developed as a web-based tool (see provided HTML code) for interacting 
+with CH341 serial devices. The app replicates the web version's functionality, enabling users to connect to a NiziPOS™ B20 device, send commands, upload and display 
+images, and monitor serial communication logs in real-time on an Android device. Designed for portability and ease of use, this app targets Android devices with USB
+serial communication support (e.g., via USB OTG).
+
+Features
+1. Serial Communication: Connect to CH341 devices over USB with configurable baud rates (9600 to 115200), mirroring the HTML version's Web Serial API functionality.
+Command Interface: Execute predefined commands (e.g., Display Logo, Text Display, QR Payload, Sleep, Wake) with customizable inputs, as seen in the HTML interface.
+
+2. Image Upload & Display: Upload JPEG, PNG, or BMP images from device storage, with preview and display capabilities. Supports both real-time images (streamed directly
+to the device for immediate display) and static images (stored on the device for later display). Note: Multiple real-time image uploads and looping are optional 
+features. Real-Time Serial Logs: Display color-coded logs (info, success, error, warning) with timestamps and optional timeout visibility, similar to the web monitor
+section.
+
+3. Device Management: Automatically detect CH341 devices or allow manual selection when multiple devices are connected, adapting the HTML modal to a mobile-friendly UI.
+User-Friendly Interface: A responsive, modern UI inspired by the HTML's grid layout, optimized for Android with native components (e.g., RecyclerView, Fragments).
+
+
+Difference Between Real-Time and Static Images
+Real-Time Images: Images are sent directly to the NiziPOS™ B20 device for immediate display upon upload, ideal for dynamic content that needs to be shown instantly 
+(e.g., live previews). This mirrors the START_RTIMAGE command in the HTML code.
+Static Images: Images are stored on the device and can be displayed later using specific commands (e.g., FSREAD), suitable for preloaded or frequently used content.
+
+Relation to HTML Code
+The provided HTML file (index.html) serves as the reference implementation, using the Web Serial API for CH341 device communication and JavaScript for command 
+execution and image handling. This Android app ports these functionalities to a native mobile environment, replacing:
+
+Web Serial API with Android USB Serial libraries (e.g., usb-serial-for-android).
+HTML/CSS interface with Android XML layouts and Material Design components.
+JavaScript logic with Java/Kotlin, maintaining the same command structure, image processing, and logging behavior.
+
+Technologies
+
+Programming Language: Kotlin/Java (Android SDK) (or of your choice)
+USB Serial Communication: USB Serial library (e.g., usb-serial-for-android) for CH341 device interaction
+UI Framework: Android Jetpack (e.g., ViewModel, LiveData) and Material Design
+Image Processing: Android Bitmap APIs for image upload and preview
+Storage: Android Storage Access Framework for file selection
+
+Usage
+Install the app on an Android device with USB OTG support.
+Connect a CH341 device via USB.
+Select the device and baud rate, send commands, or upload images (real-time or static).
+Monitor serial communication in the real-time log view.
+
+Development Notes
+The app assumes the Android device supports USB Host mode and has the necessary permissions for USB communication.
+The command set and image handling logic are directly ported from the HTML code's JavaScript implementation.
+Error handling and reconnection logic are adapted to handle Android-specific USB disconnection scenarios.
+Multiple real-time image uploads and looping are optional and can be toggled based on user needs.
+
+Purpose
+This project demonstrates the transition from a web-based simulator to a native Android app, showcasing skills in Android development, USB serial communication, 
+and UI/UX design. It maintains the core functionality of the NiziPOS™ B20 Simulator while leveraging Android's native capabilities for a seamless mobile experience.
+
+Reference: The HTML code (index.html) provided alongside this repository details the original web implementation, serving as a blueprint for the app's features and 
+logic.
