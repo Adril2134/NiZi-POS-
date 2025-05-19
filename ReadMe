@@ -1,1 +1,23 @@
+NiziPOS™ B20 Simulator
 
+A web-based simulator for the NiziPOS™ B20 device, designed to interact with CH341 serial devices via the Web Serial API. This tool enables users to connect to a device, send commands, upload and display images, and monitor serial communication logs in real-time. Key features include:
+
+Serial Communication: Connect to CH341 devices with configurable baud rates (9600 to 115200).
+Command Interface: Send predefined commands (e.g., Display Logo, Text Display, QR Payload, Sleep, Wake) with customizable parameters.
+Image Upload & Loop: Upload multiple JPEG, PNG, or BMP images (up to 6) with drag-and-drop support, preview, and looping display functionality.
+Real-Time Monitoring: View serial logs with timestamps, color-coded statuses (info, success, error, warning), and optional timeout visibility.
+Device Management: Automatic detection of CH341 devices with a modal for selecting from multiple devices.
+Responsive UI: Clean, modern interface with a grid layout, styled using CSS for an intuitive user experience.
+
+Technologies Used:
+HTML5, CSS3, JavaScript
+Web Serial API for device communication
+FileReader API for image processing
+
+Usage:
+Open in a Web Serial API-compatible browser (e.g., Chrome, Edge).
+Connect to a CH341 device via the interface.
+Use the command inputs or upload images to interact with the device.
+Monitor real-time serial communication in the logs.
+
+Note: Ensure the browser supports the Web Serial API and the CH341 device is properly connected.
